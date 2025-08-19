@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Revolt Voice Assistant (RVA)</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="talk-to-rev.css">
+</head>
+<body>
+	<header class="header">
+		<div class="logo">
+			<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="32" height="32" rx="8" fill="currentColor"/>
+				<path d="M8 12h16v2H8v-2zm0 4h16v2H8v-2zm0 4h12v2H8v-2z" fill="currentColor"/>
+			</svg>
+			<span>REVOLT</span>
+		</div>
+		
+		<div class="theme-toggle">
+			<label class="switch">
+				<input type="checkbox" id="themeToggle">
+				<span class="slider">
+					<span class="sun">☀️</span>
+					<span class="moon">🌙</span>
+				</span>
+			</label>
+		</div>
+	</header>
+
+	<main class="main">
+		<div class="chatbot-section">
+			<div class="chatbot-icon">
+				<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2"/>
+					<path d="M20 24h24v2H20v-2zm0 6h20v2H20v-2zm0 6h16v2H20v-2z" fill="currentColor"/>
+					<circle cx="24" cy="28" r="2" fill="currentColor"/>
+					<circle cx="32" cy="28" r="2" fill="currentColor"/>
+					<circle cx="40" cy="28" r="2" fill="currentColor"/>
+				</svg>
+			</div>
+			<h1 class="title">Revolt Voice Assistant (RVA)</h1>
+			<p class="subtitle">Your AI voice assistant powered by Revolt</p>
+		</div>
+
+		<div class="microphone-section">
+			<button id="talk" class="mic-button" aria-label="Click to talk">
+				<div class="mic-icon">
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M16 4c-2.2 0-4 1.8-4 4v8c0 2.2 1.8 4 4 4s4-1.8 4-4V8c0-2.2-1.8-4-4-4z" fill="currentColor"/>
+						<path d="M22 16c0 3.3-2.7 6-6 6s-6-2.7-6-6h-2c0 4.4 3.6 8 8 8v4h4v-4c4.4 0 8-3.6 8-8h-2z" fill="currentColor"/>
+					</svg>
+				</div>
+				<div class="ripple"></div>
+			</button>
+			<p class="mic-instruction">Click to talk • Click again to stop</p>
+		</div>
+
+		<div class="status-section">
+			<div id="status" class="status">Ready to connect</div>
+			<div id="latency" class="latency">Latency: —</div>
+			
+			<div class="speed-control">
+				<label for="speedSlider">Voice Speed:</label>
+				<input type="range" id="speedSlider" min="0.3" max="1.0" step="0.1" value="0.5">
+				<span id="speedValue">0.5x</span>
+			</div>
+		</div>
+	</main>
+
+	<script type="module" src="audio.js"></script>
+	<script type="module" src="app.js"></script>
+</body>
+</html>
+
+
